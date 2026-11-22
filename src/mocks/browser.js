@@ -3,6 +3,12 @@ import { handlers } from './handlers';
 import { db, resetMockDb } from './db';
 import { raceControl } from './handlers/orders';
 import { catalogControl } from './handlers/adminOrders';
+import {chatControl} from './handlers/chat';
+
+window.mockChat = {
+  mode: (m = 'ok') => { chatControl.mode = m; },      // 'ok' | '429' | '503'
+  nextReply: (text) => { chatControl.nextReply = text; }, // force the next assistant reply (e.g. an XSS probe)
+};
 window.mockOrders = {
   // mockOrders.addDemo(2, 12): 12 extra delivered orders for Asha, to test paging
   addDemo: (userId = 2, count = 12) => db.addDemoOrders(userId, count),

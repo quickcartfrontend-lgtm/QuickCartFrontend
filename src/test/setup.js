@@ -6,5 +6,6 @@ window.scrollTo = vi.fn();
 
 afterEach(() => {
   localStorage.clear(); // never let one test's login leak into the next
+  sessionStorage.clear();
   vi.clearAllMocks(); // resets call counts so "toHaveBeenCalledTimes(1)" stays honest
 });

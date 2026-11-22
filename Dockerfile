@@ -12,7 +12,7 @@ COPY . .
 ARG VITE_API_BASE_URL=""
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 # Never ship the mock. (Variables set here win over any .env file.)
-ENV VITE_USE_MOCK_API=false
+ENV VITE_USE_MOCK_API=true
 
 RUN npm run build
 

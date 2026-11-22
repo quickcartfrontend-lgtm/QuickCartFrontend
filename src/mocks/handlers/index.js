@@ -14,8 +14,10 @@ import { userHandlers } from './users';
 import { orderHandlers } from './orders';
 import { adminOrderHandlers } from './adminOrders';
 import { adminCatalogHandlers } from './adminCatalog';
+import {chatHandlers} from './chat';
 
 export const handlers = [
   ...authHandlers, ...catalogHandlers, ...cartHandlers, ...userHandlers,
   ...orderHandlers, ...adminOrderHandlers, ...adminCatalogHandlers,
+  ...chatHandlers,
 ];
